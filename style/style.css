@@ -1,0 +1,28 @@
+body {
+  font-size: 16px;
+}
+
+form {
+  margin-left: 40rem;
+  margin-top: 20rem;
+}
+
+input {
+  display: inline-block;
+  height: 2rem;
+  text-align: center;
+}
+
+button {
+  display: inline;
+  border: none;
+  margin-left: 2rem;
+}
+
+.weather,.city{
+  display: inline-block;
+}
+
+.info {
+
+}

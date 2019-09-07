@@ -5,10 +5,13 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <meta http-equiv='X-UA-Compatible' content='ie=edge' />
   <title>Weather app!!!!!</title>
+  <!-- Icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' type='text/css' href='./style/reset.css'>
   <link rel='stylesheet' type='text/css' href='./style/style.css'>
 </head>
 <body>
+
   <!--
     HTML NEEDS
     - input box
@@ -16,6 +19,30 @@
     - an element with a unique class, id, or data-attribute
       for each of the weather metrics you want to put on the page.
    -->
+
+   <!-- an input box -->
+   <form action="enter-location">
+     <input type="text" name="zip" placeholder="Zip code">
+  <!-- a submit button -->
+     <button type="submit" value="Submit"><i class="fa fa-search"></i></button>
+  </form>
+
+  <!-- an element with a unique class, id, or data-attribute
+    for each of the weather metrics on the page -->
+  <div class="info">
+    <div class="city">
+      <div id="city">city</div>
+      <div id="temperature">temperature</div>
+      <div id ="description">description</div>
+    </div>
+    <div class ="weather">
+      <p>MIN</p>
+      <div id="min-temp">min temp</div>
+      <p>MAX</p>
+      <div id="max-temp">min temp</div>
+    </div>
+  </div>
+
   <script src='./main.js'></script>
 </body>
 </html>

@@ -1,4 +1,37 @@
 console.log('main.js is connected!');
+let zipcode;
+// when the page loads add an event listener to the button
+window.onload = buttonListens();
+
+// this function adds event listener to button- when clicked, execute a function
+// that grabs the input, store the values, and make API request based on input
+
+function buttonListens() {
+  document.querySelector('button').addEventListener('click', (e) => {
+    e.preventDefault();
+    zipcode = document.querySelector('input').value;
+    //let zipcode = zipcodeBox.value;
+    fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=d0314f4e2d9a7009951400e5ac5026be`)
+      .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+    	console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  });
+};
+
+function hideElements() {
+  document.querySelector('.info').style.display="none";
+};
+
+function manipulateDOM(data) {
+
+};
+
 
 /*
 
