@@ -1,7 +1,7 @@
 body {
   font-size: 16px;
   font-family: "Lexend Deca", sans-serif;
-  background: url("../mountain-clouds.jpeg");
+  background: url("../images/mountain-clouds.jpeg");
   background-size: auto;
 }
 
@@ -14,6 +14,8 @@ h2 {
 form {
 text-align: center;
 margin-top: 2rem;
+display: flex;
+justify-content: center;
 }
 
 input {
@@ -68,16 +70,27 @@ button {
 
 @media only screen and (max-width: 600px) {
   body {
-    background-color: lightblue;
+    font-size: 10px;
   }
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+
   input {
-    diplay: block;
-    margin: 0 auto;
+    display: block;
   }
+
   .info {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    font-size: 2rem;
   }
 
 }
