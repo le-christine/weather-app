@@ -1,7 +1,12 @@
 body {
   font-size: 16px;
+  font-family: "Lexend Deca", sans-serif;
 }
 
+h2 {
+  font-size: 5rem;
+  margin-top: 2%;
+}
 form {
   margin-left: 40rem;
   margin-top: 20rem;
@@ -21,8 +26,15 @@ button {
 
 .weather,.city{
   display: inline-block;
+  text-align: center;
+  height: 10rem;
+  width: 20rem;
+  border: 1px solid black;
 }
 
-.info {
-
-}
+/* #city,#temperature,#description, {
+  height: 10rem;
+  width: 20rem;
+  border: 1px solid black;
+  margin-left: 20%;
+} */

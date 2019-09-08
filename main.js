@@ -1,5 +1,6 @@
 console.log('main.js is connected!');
 let zipcode;
+let data;
 // when the page loads add an event listener to the button
 window.onload = buttonListens();
 
@@ -11,27 +12,54 @@ function buttonListens() {
     e.preventDefault();
     zipcode = document.querySelector('input').value;
     //let zipcode = zipcodeBox.value;
-    fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=d0314f4e2d9a7009951400e5ac5026be`)
+    // sends API request for weather info on zipcode in imperial units
+    fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&units=imperial&appid=d0314f4e2d9a7009951400e5ac5026be`)
       .then((response) => {
-      return response.json();
-    })
-    .then((response) => {
-    	console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  });
+        return response.json();
+      })
+      .then((response) => {
+        data = response;
+        manipulateDOM(data);
+      })
+      .catch((err) => {
+      	console.log(err);
+      })
+    });
 };
 
 function hideElements() {
   document.querySelector('.info').style.display="none";
 };
 
+// grab all the appropriate DOM elements and append the data to the DOM
 function manipulateDOM(data) {
+let city, temperature, description, minTemp, maxTemp;
 
+city = data.name;
+temperature = data.main.temp;
+description = `It is ${data.weather[0].description}`;
+minTemp = data.main.temp_min;
+maxTemp = data.main.temp_max;
+
+document.querySelector("#city").innerText = city;
+document.querySelector("#temperature").innerText = temperature;
+document.querySelector("#description").innerText = description;
+document.querySelector("#min-temp").innerText = minTemp;
+document.querySelector("#max-temp").innerText = maxTemp;
 };
 
+/*
+<div class="city">
+  <div id="city">city</div>
+  <div id="temperature">temperature</div>
+  <div id ="description">description</div>
+</div>
+<div class ="weather">
+  <p>MIN</p>
+  <div id="min-temp">min temp</div>
+  <p>MAX</p>
+  <div id="max-temp">min temp</div>
+ */
 
 /*
 
