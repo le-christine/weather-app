@@ -13,7 +13,9 @@
   <link rel='stylesheet' type='text/css' href='./style/style.css'>
 </head>
 <body>
+  <header>
   <h2>Check the weather</h2>
+</header>
 
   <!--
     HTML NEEDS
@@ -34,16 +36,23 @@
     for each of the weather metrics on the page -->
   <div class="info">
     <div class="city">
-      <div id="city">city</div>
-      <div id="temperature">temperature</div>
-      <div id ="description">description</div>
+      <div id="city">🏙️</div>
+      <div id="temperature">🌡️</div>
+      <div id ="description">🌤️</div>
     </div>
     <div class ="weather">
       <p>MIN</p>
-      <div id="min-temp">min temp</div>
+      <div id="min-temp">➖</div>
       <p>MAX</p>
-      <div id="max-temp">min temp</div>
+      <div id="max-temp">➕</div>
     </div>
+    <div class="bonus">
+      <p>SUNRISE</p>
+      <div id = "sunrise">🌅</div>
+      <p>SUNSET</p>
+      <div id = "sunset">🌇</div>
+    </div>
+
   </div>
 
   <script src='./main.js'></script>

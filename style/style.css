@@ -1,15 +1,19 @@
 body {
   font-size: 16px;
   font-family: "Lexend Deca", sans-serif;
+  background: url("../mountain-clouds.jpeg");
+  background-size: auto;
 }
 
 h2 {
+  text-align: center;
   font-size: 5rem;
-  margin-top: 2%;
+  margin-top: 2rem;
 }
+
 form {
-  margin-left: 40rem;
-  margin-top: 20rem;
+text-align: center;
+margin-top: 2rem;
 }
 
 input {
@@ -22,19 +26,42 @@ button {
   display: inline;
   border: none;
   margin-left: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
 
-.weather,.city{
-  display: inline-block;
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+
+.weather, .city, .bonus{
+  height: 20rem;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.city {
+  margin-right: 2rem;
+}
+
+#city {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+#temperature, #min-temp, #max-temp, #sunrise, #sunset {
+  font-size: 3rem;
+}
+
+#description, p{
+  font-size: 2rem;
   text-align: center;
-  height: 10rem;
-  width: 20rem;
-  border: 1px solid black;
 }
-
-/* #city,#temperature,#description, {
-  height: 10rem;
-  width: 20rem;
-  border: 1px solid black;
-  margin-left: 20%;
-} */

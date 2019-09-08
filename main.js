@@ -33,19 +33,31 @@ function hideElements() {
 
 // grab all the appropriate DOM elements and append the data to the DOM
 function manipulateDOM(data) {
-let city, temperature, description, minTemp, maxTemp;
+let city, temperature, description, minTemp, maxTemp, sunrise, sunset;
 
 city = data.name;
 temperature = data.main.temp;
-description = `It is ${data.weather[0].description}`;
+description = `Conditions: ${data.weather[0].description}`;
 minTemp = data.main.temp_min;
 maxTemp = data.main.temp_max;
+sunrise = new Date (data.sys.sunrise * 1000);
+sunset = new Date (data.sys.sunset * 1000);
 
 document.querySelector("#city").innerText = city;
-document.querySelector("#temperature").innerText = temperature;
+document.querySelector("#temperature").innerText = temperature +'°F';
 document.querySelector("#description").innerText = description;
-document.querySelector("#min-temp").innerText = minTemp;
-document.querySelector("#max-temp").innerText = maxTemp;
+document.querySelector("#min-temp").innerText = minTemp+'°F';
+document.querySelector("#max-temp").innerText = maxTemp+'°F';
+document.querySelector("#sunrise").innerText = sunrise.toLocaleTimeString();
+document.querySelector("#sunset").innerText = sunset.toLocaleTimeString();
+
+if (temperature < 40) {
+  document.querySelector("#temperature").style.color = "blue";
+} else if (temperature > 90) {
+  document.querySelector("#temperature").style.color = "red";
+} else {
+  document.querySelector("#temperature").style.color = "black";
+}
 };
 
 /*
