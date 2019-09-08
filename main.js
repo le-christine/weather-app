@@ -59,34 +59,3 @@ if (temperature < 40) {
   document.querySelector("#temperature").style.color = "black";
 }
 };
-
-/*
-<div class="city">
-  <div id="city">city</div>
-  <div id="temperature">temperature</div>
-  <div id ="description">description</div>
-</div>
-<div class ="weather">
-  <p>MIN</p>
-  <div id="min-temp">min temp</div>
-  <p>MAX</p>
-  <div id="max-temp">min temp</div>
- */
-
-/*
-
-Here's an overview of the steps you'll follow to get your app to work...
-
-STEPS
-
-1. when the page loads
-  - add an event listener to the button
-2. When the button is clicked
-  - grab the input
-  - store the value
-  - make an API request based on the input value
-3. When the API response is returned
-  - grab all the appropriate DOM elements
-  - append the data to the DOM
-
-*/
