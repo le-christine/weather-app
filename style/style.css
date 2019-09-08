@@ -57,11 +57,27 @@ button {
   text-transform: uppercase;
 }
 
-#temperature, #min-temp, #max-temp, #sunrise, #sunset {
+#temperature, .weatherApp {
   font-size: 3rem;
 }
 
 #description, p{
   font-size: 2rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  input {
+    diplay: block;
+    margin: 0 auto;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 }
